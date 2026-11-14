@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><title>TikTok OAuth callback — techdailyvn</title></head>
+<body>
+<h1>Authorization code</h1>
+<p>Copy the code below and send it to Nibbles:</p>
+<pre id="code" style="font-size:20px;word-break:break-all"></pre>
+<p id="state"></p>
+<script>
+const p = new URLSearchParams(location.search);
+document.getElementById('code').textContent = p.get('code') || '(no code — ' + (p.get('error') || 'unknown error') + ')';
+document.getElementById('state').textContent = 'state: ' + (p.get('state') || '');
+</script>
+</body>
+</html>
